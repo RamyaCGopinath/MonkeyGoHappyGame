@@ -82,16 +82,19 @@ function draw() {
   else if(gameState == "end"){
     ground.velocityX=0;
     bg.velocityX=0;
-    bananaGroup.setVelocityXEach(0);
-    obstaclesGroup.setVelocityXEach(0);
-    bananaGroup.setLifetimeEach(-1);
-    obstaclesGroup.setLifetimeEach(-1);
-    player.changeAnimation("Collided",player_collided);
+    player.visible = false;
+    obstaclesGroup.destroyEach();
+    bananaGroup.destroyEach();
+    //bananaGroup.setVelocityXEach(0);
+    //obstaclesGroup.setVelocityXEach(0);
+    //bananaGroup.setLifetimeEach(-1);
+    //obstaclesGroup.setLifetimeEach(-1);
+    //player.changeAnimation("Collided",player_collided);
     drawSprites();
     stroke("white");
-    textSize(40);
+    textSize(70);
     fill(255);
-    text("Game Over !",300,200);
+    text("Game Over !",220,220);
   }
     
   
